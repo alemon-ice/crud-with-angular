@@ -9,7 +9,7 @@ import { Product } from './product.model';
   providedIn: 'root',
 })
 export class ProductService {
-  baseUrl = `${environment.apiURL}/products`;
+  apiURL = `${environment.apiURL}/products`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
@@ -22,6 +22,10 @@ export class ProductService {
   }
 
   create(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.baseUrl, product);
+    return this.http.post<Product>(this.apiURL, product);
+  }
+
+  readAll(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiURL);
   }
 }

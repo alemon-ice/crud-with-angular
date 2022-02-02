@@ -29,6 +29,7 @@ import { MatSortModule } from '@angular/material/sort';
 
 import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
+import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 
 registerLocaleData(localePT);
 
@@ -43,6 +44,7 @@ registerLocaleData(localePT);
     RedDirective,
     ProductCreateComponent,
     ProductReadComponent,
+    ProductUpdateComponent,
   ],
   imports: [
     BrowserModule,

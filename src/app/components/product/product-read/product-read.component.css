@@ -10,6 +10,12 @@ table {
   color: #f5e832;
 }
 
+.delete {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .delete > i {
   color: #e35e6b;
 }

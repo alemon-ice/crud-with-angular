@@ -26,10 +26,12 @@ import { ProductReadComponent } from './components/product/product-read/product-
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
+import { DialogComponent } from './components/template/dialog/dialog.component';
 
 registerLocaleData(localePT);
 
@@ -45,6 +47,7 @@ registerLocaleData(localePT);
     ProductCreateComponent,
     ProductReadComponent,
     ProductUpdateComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,7 @@ registerLocaleData(localePT);
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatDialogModule,
   ],
   providers: [
     {

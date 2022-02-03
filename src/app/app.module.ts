@@ -21,7 +21,6 @@ import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { ProductCrudComponent } from './views/product-crud/product-crud.component';
 import { RedDirective } from './directives/red.directive';
-import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -30,8 +29,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
-import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 import { DialogComponent } from './components/template/dialog/dialog.component';
+import { ProductFormComponent } from './components/product/product-form/product-form.component';
 
 registerLocaleData(localePT);
 
@@ -44,10 +43,9 @@ registerLocaleData(localePT);
     HomeComponent,
     ProductCrudComponent,
     RedDirective,
-    ProductCreateComponent,
     ProductReadComponent,
-    ProductUpdateComponent,
     DialogComponent,
+    ProductFormComponent,
   ],
   imports: [
     BrowserModule,

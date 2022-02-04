@@ -1,4 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterContentChecked,
+  AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  DoCheck,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
@@ -8,7 +19,17 @@ import { ProductService } from '../product.service';
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.css'],
 })
-export class ProductFormComponent implements OnInit {
+export class ProductFormComponent
+  implements
+    OnInit,
+    OnChanges,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked,
+    OnDestroy
+{
   formAction: 'CREATE' | 'UPDATE' = 'CREATE';
   formTitle: string = 'Novo Produto';
   product: Product = {
@@ -23,6 +44,8 @@ export class ProductFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log('INICIALIZAÇÃO DO COMPONENTE');
+
     const hasIdParam = this.route.snapshot.paramMap.has('id');
 
     if (hasIdParam) {
@@ -34,6 +57,35 @@ export class ProductFormComponent implements OnInit {
         this.product = product;
       });
     }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('RECEBENDO DADOS ATRAVÉS DO @Input');
+    console.log({ changes });
+  }
+
+  ngDoCheck(): void {
+    console.log('PROPRIEDADES DE ENTRADA VERIFICADAS');
+  }
+
+  ngAfterContentInit(): void {
+    console.log('CONTEÚDO DO COMPONENTE PROJETADO NA VISUALIZAÇÃO');
+  }
+
+  ngAfterContentChecked(): void {
+    console.log('ALTERAÇÃO DE CONTEÚDO DO COMPONENTE DETECTADO PELO ANGULAR');
+  }
+
+  ngAfterViewInit(): void {
+    console.log('VISUALIZAÇÃO DO COMPONENTE TOTALMENTE INICIALIZADA');
+  }
+
+  ngAfterViewChecked(): void {
+    console.log('VISUALIZAÇÃO DO COMPONENTE VERIFICADA PELO ANGULAR');
+  }
+
+  ngOnDestroy(): void {
+    console.log('AO FINALIZAR O COMPONENTE');
   }
 
   createProduct() {
